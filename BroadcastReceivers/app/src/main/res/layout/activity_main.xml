@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Broadcast Receivers"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Implicit - Triggered via Intent-Filter \n Explicit - Triggered by explicitly calling the PackageName and BroadcastReceiver Name \n  Static - Declared in the manifest, works even if app is not running \n Dynamic - Declared inside the app activity's onStart/onStop or in the Application.java file"
+        android:textSize="10sp"
+        android:layout_gravity="left"
+        android:layout_margin="16dp"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000"
+        android:layout_marginBottom="16dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="1 : The first Receiver is an Implicit and Static Receiver, triggered on changing bluetooth state. It makes a Toast. Wait for bluetooth for 10seconds to turn on  "
+        android:textColor="@android:color/holo_purple"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="2. The Second receiver is an implicit Dynamic Receiver, which is declared in this MainActivity's onStart/onStop and triggers via changing the network state (Turn off mobile data on off). If you are using wifi, then you have to turn it off-on "
+        android:textColor="@android:color/holo_green_dark"
+
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        >
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Send Custom Broadcast"
+            android:onClick="onClick_Btn3_sendCustomBroadCast"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        >
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Open MyJobIntentService"
+            android:onClick="openMyJobIntentService"
+            android:layout_margin="16dp"
+            />
+
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
