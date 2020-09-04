@@ -2,6 +2,7 @@ package in.rafique.androidbasics.broadcastreceivers;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ComponentName;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Registering the second receiver
         IntentFilter filter = new IntentFilter() ;
-        filter.addAction("android.media.RINGER_MODE_CHANGED");  // you can add multiple action here i.e. listen to multiple intent filters
+        filter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);  // you can add multiple action here i.e. listen to multiple intent filters
         registerReceiver(dynamicImplicit2NetworkReceiver, filter) ;
 
 
@@ -58,5 +59,16 @@ public class MainActivity extends AppCompatActivity {
         sendBroadcast(intent);
 
 
+    }
+
+    public void onClick_Btn4_ExplicitBroadcastReceiver(View v){
+        String packageName = "in.rafique.androidbasics.broadcastreceivers" ;
+        String broadcastReceiverFullName = "in.rafique.androidbasics.broadcastreceivers.receivers.StaticExplicit_4_BroadcastReceiver" ;
+        // when we do new Intent(context, className.java) we are stll doing the following thing
+        // the context gives package name, and the class name gives class path
+        ComponentName componentName = new ComponentName(packageName, broadcastReceiverFullName) ;
+        Intent intent = new Intent() ;
+        intent.setComponent(componentName) ;
+        sendBroadcast(intent);
     }
 }

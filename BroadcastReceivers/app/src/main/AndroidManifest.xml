@@ -34,6 +34,10 @@
             </intent-filter>
         </receiver>
 
+        <receiver android:name=".receivers.StaticExplicit_4_BroadcastReceiver"
+            android:exported="true">
+        </receiver>
+
     </application>
 
 </manifest>

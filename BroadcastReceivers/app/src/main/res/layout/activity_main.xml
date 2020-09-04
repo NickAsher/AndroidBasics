@@ -57,14 +57,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="16dp"
         >
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Send Custom Broadcast"
+            android:textSize="8sp"
             android:onClick="onClick_Btn3_sendCustomBroadCast"
+            android:layout_marginTop="16dp"
             />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3. This button sends a custom broadcast with intent filter of yoloman.super.duper.myFilter.MY_ACTION . I have also declared a broadcast receiver that takes in this intent filter and can catch that. So when you click this button, my receiver will catch that braodcast and will show a toast message"
+            android:layout_gravity="top"
+            android:gravity="top"
+            android:padding="8dp"
+            android:layout_margin="8dp"
+            />
+
 
     </LinearLayout>
 
@@ -72,18 +84,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="16dp"
         >
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Open MyJobIntentService"
-            android:onClick="openMyJobIntentService"
-            android:layout_margin="16dp"
+            android:text="Explicit Broadcast"
+            android:onClick="onClick_Btn4_ExplicitBroadcastReceiver"
+            android:layout_marginTop="16dp"
+            android:textSize="8sp"
             />
 
 
-
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4. This button explicitly calls the broadcast receiver by passing the package and the class name. You can also do this for calling broadcast receivers of different apps by passsing their package name and their broadcast receiver name. just make sure that the receiver in the manifest is exported=true because when you dont put intent filter, the value of exported becomes false"
+            android:layout_gravity="top"
+            android:gravity="top"
+            android:padding="8dp"
+            android:layout_margin="8dp"
+            />
 
 
     </LinearLayout>
