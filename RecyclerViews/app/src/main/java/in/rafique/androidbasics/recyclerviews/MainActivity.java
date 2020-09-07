@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import in.rafique.androidbasics.recyclerviews.ui.autoscroll.Autoscroll_3_RecyclerView;
+import in.rafique.androidbasics.recyclerviews.ui.crud.CRUD_2_RecyclerView;
 import in.rafique.androidbasics.recyclerviews.ui.normal.Normal_1_RecyclerView;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,8 +25,13 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void openCRUDRecyclerView(View v){
+        Intent intent = new Intent(this, CRUD_2_RecyclerView.class) ;
+        startActivity(intent);
+    }
+
     public void openAutoScrollingRecyclerView(View v){
-        Intent intent = new Intent(this, Normal_1_RecyclerView.class) ;
+        Intent intent = new Intent(this, Autoscroll_3_RecyclerView.class) ;
         startActivity(intent);
     }
 }

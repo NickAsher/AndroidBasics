@@ -51,6 +51,7 @@ public class Object_FoodItem {
     public static List<Object_FoodItem> getListOfFoodItems(){
         if (listOfItems == null){
             listOfItems = new ArrayList<>() ;
+            listOfItems.add(new Object_FoodItem(0, "coffee", R.drawable.coffee)) ;
             listOfItems.add(new Object_FoodItem(1, "Pizza", R.drawable.pizza)) ;
             listOfItems.add(new Object_FoodItem(2, "Burger", R.drawable.burger)) ;
             listOfItems.add(new Object_FoodItem(3, "Mozarella Sticks", R.drawable.mozarella_sticks)) ;
@@ -63,7 +64,6 @@ public class Object_FoodItem {
             listOfItems.add(new Object_FoodItem(10, "Tomato", R.drawable.tomato)) ;
             listOfItems.add(new Object_FoodItem(11, "cheese bread", R.drawable.cheese_bread)) ;
             listOfItems.add(new Object_FoodItem(12, "cake", R.drawable.cake)) ;
-            listOfItems.add(new Object_FoodItem(13, "coffee", R.drawable.coffee)) ;
         }
         return listOfItems;
     }
