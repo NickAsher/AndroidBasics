@@ -17,7 +17,6 @@ import in.rafique.androidbasics.recyclerviews.data.Object_FoodItem;
 public class CRUD_2_RecyclerView extends AppCompatActivity {
     List<Object_FoodItem> listOfItems ;
     Context context ;
-    private static final String LOG_TAG = "Autoscroll_2 => " ;
 
     RecyclerView recyclerView ;
     RVAdapter_CRUD rvAdapter_crud ;
@@ -31,8 +30,6 @@ public class CRUD_2_RecyclerView extends AppCompatActivity {
 
 
         initRecyclerView() ;
-
-
     }
 
     private void initRecyclerView(){

@@ -15,7 +15,6 @@ import in.rafique.androidbasics.recyclerviews.data.Object_FoodItem;
 public class Normal_1_RecyclerView extends AppCompatActivity {
     List<Object_FoodItem> listOfItems ;
     Context context ;
-    private static final String LOG_TAG = "MainActivity => " ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +24,6 @@ public class Normal_1_RecyclerView extends AppCompatActivity {
         listOfItems = Object_FoodItem.getListOfFoodItems() ;
 
         initRecyclerView();
-
     }
 
     private void initRecyclerView(){
