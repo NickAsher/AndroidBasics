@@ -2,8 +2,10 @@ package in.rafique.androidbasics.workmanager;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
+import androidx.work.Constraints;
 import androidx.work.Data;
 import androidx.work.ExistingPeriodicWorkPolicy;
+import androidx.work.NetworkType;
 import androidx.work.OneTimeWorkRequest;
 import androidx.work.PeriodicWorkRequest;
 import androidx.work.WorkInfo;
@@ -18,6 +20,8 @@ import java.util.concurrent.TimeUnit;
 
 import in.rafique.androidbasics.workmanager.works.W1_NormalWork;
 import in.rafique.androidbasics.workmanager.works.W2_IOWork;
+import in.rafique.androidbasics.workmanager.works.W3_ConstrainedWork;
+import in.rafique.androidbasics.workmanager.works.W4_NormalPeriodicWork;
 
 public class MainActivity extends AppCompatActivity {
     Context context ;
@@ -50,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onChanged(WorkInfo workInfo) {
                         String workStatus = workInfo.getState().toString() ;
-                        statusTextView.setText("W1=> " + workStatus);
+                        statusTextView.append("\n W1=> " + workStatus);
                     }
                 });
     }
@@ -76,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onChanged(WorkInfo workInfo) {
                     String workStatus = workInfo.getState().toString() ;
-                    statusTextView.setText("W2=> " + workStatus);
+                    statusTextView.append("\n W2=> " + workStatus);
 
                     if(workInfo.getState().isFinished()){
                         // always check if work is finished when getting output data
@@ -91,12 +95,52 @@ public class MainActivity extends AppCompatActivity {
 
     public void doConstrained_OneTimeWork(View v){
 
+        Constraints constraints = new Constraints.Builder()
+                .setRequiresCharging(true)
+//                .setRequiresBatteryNotLow(true)
+//                .setRequiredNetworkType(NetworkType.CONNECTED) METERED, NOT_REQUIRED, ROAMING, UNMETERED
+                .build() ;
+
+        OneTimeWorkRequest workRequest = new OneTimeWorkRequest.Builder(W3_ConstrainedWork.class)
+                .addTag("W3_ConstrainedWork")
+                .setConstraints(constraints)
+                .build() ;
+
+        workManager
+                .enqueue(workRequest) ;
+
+        workManager.getWorkInfoByIdLiveData(workRequest.getId()).observe(this, new Observer<WorkInfo>() {
+            @Override
+            public void onChanged(WorkInfo workInfo) {
+                String workStatus = workInfo.getState().toString() ;
+                statusTextView.append("\n W3=> " + workStatus);
+            }
+        });
 
 
     }
 
+
+
+
+
     public void doBasic_PerdiodicWork(View v){
 
+        PeriodicWorkRequest workRequest = new PeriodicWorkRequest.Builder(W4_NormalPeriodicWork.class, 31, TimeUnit.MINUTES)
+                .addTag("W4_NormalPeriodicWork")
+                .build() ;
+
+        workManager.
+                enqueueUniquePeriodicWork(
+                        "background_updater",
+                        ExistingPeriodicWorkPolicy.REPLACE, // if same work exists, replace it with new one
+                        workRequest) ;
+
+        // NOTE the lifecycle of periodic work is ENQUEUE=>RUNNING=>ENQUEUE.
+        // Periodic work cannot finish, it will only finish when forcefull terminated
+        // So use periodic work, where you don't need output data
+        // if you need output data, put it in a database and use liveView to update in UI
+        // i can't make an example to show result. You can see the result in logcat though
 
 
     }

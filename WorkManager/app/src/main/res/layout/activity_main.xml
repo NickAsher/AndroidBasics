@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="8dp"
+        android:layout_margin="8dp"
         >
 
         <Button
@@ -34,7 +34,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Do basic normal work. It waits for 2 seconds and then shows a text"
+            android:layout_gravity="center"
+            android:text="Do basic normal work. It waits for 2 seconds and then displays the status"
+            android:textSize="10sp"
+            android:paddingBottom="8dp"
             />
 
     </LinearLayout>
@@ -44,7 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="8dp"
+        android:layout_margin="8dp"
         >
 
         <Button
@@ -60,7 +63,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Do IO Work"
+            android:layout_gravity="center"
+            android:text="This does IO Work, i.e. it takes in input data and spits output on completing result. I have given it the input : 'Rafique' and '21' . IT should form a sentence as output "
+            android:textSize="10sp"
             />
 
 
@@ -70,7 +75,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="8dp"
+        android:layout_margin="8dp"
         >
 
         <Button
@@ -86,7 +91,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Do Constrained OneTime Work"
+            android:layout_gravity="center"
+            android:text="This work has a constraint, that it will only work if the phone is charging. So put the work when phone is not charging, then put the phone on charging. After a minute or 2(Taken by AndroidSystem), the work manager will start working. You can even click the button multiple times and it will enqueue multiple WorkRequests"
+            android:textSize="10sp"
             />
 
 
@@ -96,25 +103,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="8dp"
+        android:layout_margin="16dp"
 
         >
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="W4 Basic Periodic Work"
-            android:onClick="doBasic_PerdiodicWork"
-            android:textSize="10sp"
-            android:textAllCaps="false"
             android:layout_marginRight="16dp"
-            />
+            android:onClick="doBasic_PerdiodicWork"
+            android:text="W4 Basic Periodic Work"
+            android:textAllCaps="false"
+            android:textSize="10sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Do basic periodic Work"
-            />
+            android:layout_gravity="center"
+            android:text="This does periodic work. Note that periodic work doesn't produce output like OneTimeWork, but it can access Database and storage. So use it for background tasks. Clicking this button will show Work being 'ENQUEUED' and 'RUNNING' . But it won't show it as finished. but it does actually finishes after which it enqueues another work, since it is periodic, so you will see another ENQUEUED"
+            android:textSize="10sp" />
 
 
     </LinearLayout>
