@@ -29,6 +29,9 @@ public interface Dao_FoodItem {
     @Update(onConflict = OnConflictStrategy.REPLACE)
     void updateFoodItem(Object_FoodItem foodItem) ;
 
+    @Query("UPDATE table_foodItem SET name = :newName WHERE id = :id")
+    void updateFoodItem(int id, String newName) ;
+
     @Delete
     void deleteFoodItem(Object_FoodItem foodItem) ;
 

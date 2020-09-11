@@ -12,12 +12,6 @@
     >
 
 
-    <Button
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="Show All Food Items"
-        android:onClick="showAllFoodItems"
-        />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -30,11 +24,13 @@
             android:layout_width="wrap_content"
             android:text="Insert New Food Item"
             android:onClick="insertNewFoodItem"
+            android:textAllCaps="false"
             />
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/activityDbManipulation_EditText_InsertItemName"
+            android:hint="New Item Name "
             android:padding="16dp"
             />
 
@@ -49,14 +45,49 @@
         <Button
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="Delete Food Item by ID"
+            android:text="Delete Food Item"
             android:onClick="deleteFoodItemById"
+            android:textAllCaps="false"
             />
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/activityDbManipulation_EditText_DeleteItemId"
             android:padding="16dp"
+            android:hint="ItemId"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Update Item"
+            android:onClick="updateFoodItem"
+            android:textAllCaps="false"
+            />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/activityDbManipulation_EditText_UpdateItemId"
+            android:padding="16dp"
+            android:hint="ItemId"
+            />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/activityDbManipulation_EditText_UpdateItemName"
+            android:padding="16dp"
+            android:hint="ItemName"
             />
 
     </LinearLayout>
@@ -64,6 +95,7 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         >
 
         <TextView

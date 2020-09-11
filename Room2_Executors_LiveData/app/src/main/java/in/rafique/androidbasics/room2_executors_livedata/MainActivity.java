@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -19,11 +21,13 @@ public class MainActivity extends AppCompatActivity {
     public static final String LOG_TAG = "MainActivity => " ;
     AppDatabase db ;
     AppExecutors appExecutors ;
+    Context context ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        context = this ;
         db = AppDatabase.getInstance(this.getApplicationContext()) ;
         appExecutors = AppExecutors.getInstance() ;
     }
@@ -38,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
 
                 if (listOfItems.size() == 0) {
                     listOfItems.add(new Object_FoodItem("Margherita Pizza"));
-                    ;
                     listOfItems.add(new Object_FoodItem("Double Cheese Pizza"));
                     listOfItems.add(new Object_FoodItem("Farmhouse "));
                     listOfItems.add(new Object_FoodItem("Peppy Paneer "));
@@ -69,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
                     });
 
                 }
+                Toast.makeText(context, "One Time Setup Complete", Toast.LENGTH_SHORT).show();
             }
         });
 
