@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".vp5.Activity5_TabLayoutViewPager">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Tab Layout ViewPager"
+        />
+
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/tabLayout"
+        app:tabMode="scrollable"
+        app:tabGravity="center"
+        android:background="@color/colorPrimaryDark"
+        app:tabIndicatorColor="#fff"
+        app:tabSelectedTextColor="#ffffff"
+        app:tabTextColor="#ddd"
+        android:layout_margin="0dp"
+        > <!--       use android:background instead of app:tabBackground, otherwise tabLayout won't fill the width-->
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:icon="@drawable/pizza_white"
+            android:text="Pizza"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:icon="@drawable/hamburger_white"
+            android:text="Burger"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:icon="@drawable/coffee_white"
+            android:text="Coffee"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:icon="@drawable/cupcake_white"
+            android:text="CupCake"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:icon="@drawable/donut_white"
+            android:text="Donut"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:icon="@drawable/drink_white"
+            android:text="Soda"/>
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/viewPager"
+        />
+
+</LinearLayout>

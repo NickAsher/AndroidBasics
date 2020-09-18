@@ -4,7 +4,6 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import in.rafique.androidbasics.viewpager.R;
-import in.rafique.androidbasics.viewpager.VPAdapter3_InfiniteScroll;
 
 import static androidx.fragment.app.FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT;
 

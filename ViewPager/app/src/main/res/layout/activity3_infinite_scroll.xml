@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Activity3_InfiniteScrollViewPager">
+    tools:context=".vp3.Activity3_InfiniteScrollViewPager">
 
     <TextView
         android:layout_width="match_parent"

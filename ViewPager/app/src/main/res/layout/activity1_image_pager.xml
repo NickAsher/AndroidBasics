@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Activity1_ImageViewPager">
+    tools:context=".vp1.Activity1_ImageViewPager">
 
     <TextView
         android:layout_width="match_parent"

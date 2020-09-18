@@ -1,4 +1,4 @@
-package in.rafique.androidbasics.viewpager;
+package in.rafique.androidbasics.viewpager.vp1;
 
 import android.os.Bundle;
 
@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import java.util.ArrayList;
+
+import in.rafique.androidbasics.viewpager.R;
 
 public class Activity1_ImageViewPager extends AppCompatActivity {
 

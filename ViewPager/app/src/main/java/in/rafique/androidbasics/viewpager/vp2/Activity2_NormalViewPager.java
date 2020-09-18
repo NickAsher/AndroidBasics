@@ -1,9 +1,11 @@
-package in.rafique.androidbasics.viewpager;
+package in.rafique.androidbasics.viewpager.vp2;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
+
+import in.rafique.androidbasics.viewpager.R;
 
 import static androidx.fragment.app.FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT;
 

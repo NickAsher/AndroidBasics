@@ -1,4 +1,4 @@
-package in.rafique.androidbasics.viewpager;
+package in.rafique.androidbasics.viewpager.vp2;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

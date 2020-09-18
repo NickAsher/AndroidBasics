@@ -1,4 +1,4 @@
-package in.rafique.androidbasics.viewpager;
+package in.rafique.androidbasics.viewpager.vp1;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,6 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
 import java.util.ArrayList;
+
+import in.rafique.androidbasics.viewpager.R;
 
 public class ViewPager1_ImageOnlyAdapter extends PagerAdapter {
     //we extend the PagerAdapter class, which is the basic class for instantiating any type of pager

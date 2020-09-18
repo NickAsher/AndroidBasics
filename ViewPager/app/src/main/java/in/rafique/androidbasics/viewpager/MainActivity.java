@@ -6,7 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import in.rafique.androidbasics.viewpager.vp1.Activity1_ImageViewPager;
+import in.rafique.androidbasics.viewpager.vp2.Activity2_NormalViewPager;
+import in.rafique.androidbasics.viewpager.vp3.Activity3_InfiniteScrollViewPager;
 import in.rafique.androidbasics.viewpager.vp4.Activity4_AutoInfiniteScrollPager;
+import in.rafique.androidbasics.viewpager.vp5.Activity5_TabLayoutViewPager;
+import in.rafique.androidbasics.viewpager.vp6.Activity6_DynamicViewPager;
 
 public class MainActivity extends AppCompatActivity {
 
