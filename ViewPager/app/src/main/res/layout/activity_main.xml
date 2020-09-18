@@ -18,8 +18,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
-        android:text="0. Image Only View Pager"
-        android:onClick="openNormalViewPager"
+        android:text="1. Image Only View Pager"
+        android:onClick="openImageOnlyViewPager"
         />
 
 
@@ -27,16 +27,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
-        android:text="1. Normal View Pager"
+        android:text="2. Normal View Pager"
         android:onClick="openNormalViewPager"
-        />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="2. Spaced View Pager"
-        android:onClick="openSpacedViewPager"
         />
 
     <Button
@@ -51,7 +43,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
-        android:text="4. TabLayout ViewPager"
+        android:text="4. Auto Scroll ViewPager"
+        android:onClick="openAutoScrollingViewPager"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="5. TabLayout ViewPager"
         android:onClick="openTabLayoutViewPager"
         />
 
@@ -59,7 +59,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
-        android:text="5. Dynamic Fragments ViewPager"
+        android:text="6. Dynamic Fragments ViewPager"
         android:onClick="openDynamicViewPager"
         />
 

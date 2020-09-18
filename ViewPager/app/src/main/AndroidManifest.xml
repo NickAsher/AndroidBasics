@@ -16,12 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity0_ImageViewPager" />
-        <activity android:name=".Activity1_NormalViewPager"/>
-        <activity android:name=".Activity2_SpacedViewPager"/>
-        <activity android:name=".Activity3_TabLayoutViewPager"/>
-        <activity android:name=".Activity4_InfiniteScrollViewPager"/>
-        <activity android:name=".Activity5_DynamicViewPager"/>
+        <activity android:name=".Activity1_ImageViewPager" />
+        <activity android:name=".Activity2_NormalViewPager"/>
+        <activity android:name=".Activity3_InfiniteScrollViewPager"/>
+        <activity android:name=".vp4.Activity4_AutoInfiniteScrollPager" />
+        <activity android:name=".Activity5_TabLayoutViewPager"/>
+        <activity android:name=".Activity6_DynamicViewPager"/>
 
     </application>
 

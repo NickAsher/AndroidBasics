@@ -5,19 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Activity1_NormalViewPager">
+    tools:context=".Activity6_DynamicViewPager">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Normal ViewPager"
+        android:text="Dynamic ViewPager"
         />
 
     <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/activity1_ViewPager"
+        android:id="@+id/viewPager"
         />
 
 </LinearLayout>

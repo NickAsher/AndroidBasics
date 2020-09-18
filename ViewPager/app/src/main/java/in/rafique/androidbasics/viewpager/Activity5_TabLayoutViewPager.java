@@ -4,11 +4,13 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Activity5_DynamicViewPager extends AppCompatActivity {
+public class Activity5_TabLayoutViewPager extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity1_normal_view_pager);
+        setContentView(R.layout.activity5);
     }
+
+
 }

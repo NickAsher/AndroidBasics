@@ -1,9 +1,9 @@
-package in.rafique.androidbasics.viewpager;
+package in.rafique.androidbasics.viewpager.vp4;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import in.rafique.androidbasics.viewpager.fragments.Fragment1;
 import in.rafique.androidbasics.viewpager.fragments.Fragment2;
@@ -12,16 +12,16 @@ import in.rafique.androidbasics.viewpager.fragments.Fragment4;
 import in.rafique.androidbasics.viewpager.fragments.Fragment5;
 import in.rafique.androidbasics.viewpager.fragments.Fragment6;
 
-public class VPAdapter1_NormalFragments extends FragmentPagerAdapter {
+public class VPAdapter4_AutoInfiniteScroll extends FragmentStatePagerAdapter {
 
-    public VPAdapter1_NormalFragments(@NonNull FragmentManager fm, int behavior) {
+    public VPAdapter4_AutoInfiniteScroll(@NonNull FragmentManager fm, int behavior) {
         super(fm, behavior);
     }
 
     @NonNull
     @Override
     public Fragment getItem(int position) {
-        switch (position){
+        switch (position%6){
             case 0 : return new Fragment1() ;
             case 1 : return new Fragment2() ;
             case 2 : return new Fragment3() ;
@@ -35,6 +35,6 @@ public class VPAdapter1_NormalFragments extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 6;
+        return 1000;
     }
 }
