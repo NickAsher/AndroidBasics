@@ -2,6 +2,7 @@ package in.rafique.androidbasics.recyclerviews.ui.autoscroll;
 
 import android.content.Context;
 import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,13 +24,13 @@ public class RVAdapter_Autoscroll extends RecyclerView.Adapter<RVAdapter_Autoscr
     Context context ;
     List<Object_FoodItem> lisOfItems ;
 
-    int NO_OF_ITEMS = 1000 ;
+    public static int NO_OF_ITEMS = 1000 ;
     boolean newAutoScroll = true ;
     public static boolean pauseAutoScroll = false ;
-
+    Runnable autoScrollRunnable ;
 
     public RVAdapter_Autoscroll(Context context, List<Object_FoodItem> listOfItems){
-        this.context = context ;
+        this.context = context.getApplicationContext() ; //very important to use application context
         this.lisOfItems = listOfItems ;
     }
 
@@ -49,10 +50,17 @@ public class RVAdapter_Autoscroll extends RecyclerView.Adapter<RVAdapter_Autoscr
         }
 
         Object_FoodItem currentItem = lisOfItems.get(position%lisOfItems.size()) ;
-
-        Glide.with(context).load(currentItem.getImageId()).into(holder.itemImageView) ;
+        Log.d(LOG_TAG, "Still Loggin and applying") ;
+        Glide.with(context).load(currentItem.getImageId()).into(holder.itemImageView) ; //must use application context here, when using autoscroll
         holder.itemIdTextView.setText("" + currentItem.getId());
         holder.itemNameTextView.setText(currentItem.getName());
+    }
+
+
+    public void stopScrolling(RecyclerView rv){
+        pauseAutoScroll = true ;
+         boolean callbacksRemoved = rv.removeCallbacks(autoScrollRunnable) ; //  it doesn't really work, so that's why i am also calling pauseAutoscroll
+        Log.d(LOG_TAG, "Removing Callbacks : " + callbacksRemoved) ;
     }
 
 
@@ -115,7 +123,7 @@ public class RVAdapter_Autoscroll extends RecyclerView.Adapter<RVAdapter_Autoscr
         final int scrollPeriod = 20; // every 20 ms scoll will happened. smaller values for smoother
         final int heightToScroll = 1; // will be scrolled to 20 px every time. smaller values for smoother scrolling
 
-        recyclerView.post(new Runnable() {
+        autoScrollRunnable = new Runnable() {
             @Override
             public void run() {
 
@@ -134,6 +142,8 @@ public class RVAdapter_Autoscroll extends RecyclerView.Adapter<RVAdapter_Autoscr
                 }.start();
             }
 
-        });
+        } ;
+
+        recyclerView.post(autoScrollRunnable);
     }
 }
