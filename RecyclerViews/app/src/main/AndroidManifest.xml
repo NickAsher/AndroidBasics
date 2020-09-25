@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ui.multiple_viewtype.MultipleViewType_4_RecyclerView" />
         <activity android:name=".ui.autoscroll.Autoscroll_3_RecyclerView"></activity>
         <activity android:name=".ui.crud.CRUD_2_RecyclerView" />
         <activity android:name=".ui.normal.Normal_1_RecyclerView" />

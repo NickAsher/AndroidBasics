@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:text="Open Normal Recycler View"
         android:onClick="openNormalRecyclerView"
+        android:textAllCaps="false"
         />
 
     <Button
@@ -19,6 +20,7 @@
         android:layout_height="wrap_content"
         android:text="Open CRUD Recycler View"
         android:onClick="openCRUDRecyclerView"
+        android:textAllCaps="false"
         />
 
     <Button
@@ -26,6 +28,16 @@
         android:layout_height="wrap_content"
         android:text="Open Auto Scrolling View"
         android:onClick="openAutoScrollingRecyclerView"
+        android:textAllCaps="false"
+        />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Open Multi View Type RecyclerView"
+        android:onClick="openMutiViewTypeRecyclerView"
+        android:textAllCaps="false"
         />
 
 </LinearLayout>
