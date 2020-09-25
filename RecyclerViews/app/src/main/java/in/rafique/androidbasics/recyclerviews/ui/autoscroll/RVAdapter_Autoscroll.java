@@ -27,7 +27,8 @@ public class RVAdapter_Autoscroll extends RecyclerView.Adapter<RVAdapter_Autoscr
     public static int NO_OF_ITEMS = 1000 ;
     boolean newAutoScroll = true ;
     public static boolean pauseAutoScroll = false ;
-    Runnable autoScrollRunnable ;
+
+    CountDownTimer autScrollCountDownTimer;
 
     public RVAdapter_Autoscroll(Context context, List<Object_FoodItem> listOfItems){
         this.context = context.getApplicationContext() ; //very important to use application context
@@ -57,10 +58,8 @@ public class RVAdapter_Autoscroll extends RecyclerView.Adapter<RVAdapter_Autoscr
     }
 
 
-    public void stopScrolling(RecyclerView rv){
-        pauseAutoScroll = true ;
-         boolean callbacksRemoved = rv.removeCallbacks(autoScrollRunnable) ; //  it doesn't really work, so that's why i am also calling pauseAutoscroll
-        Log.d(LOG_TAG, "Removing Callbacks : " + callbacksRemoved) ;
+    public void stopScrolling(){
+        autScrollCountDownTimer.cancel();
     }
 
 
@@ -123,27 +122,28 @@ public class RVAdapter_Autoscroll extends RecyclerView.Adapter<RVAdapter_Autoscr
         final int scrollPeriod = 20; // every 20 ms scoll will happened. smaller values for smoother
         final int heightToScroll = 1; // will be scrolled to 20 px every time. smaller values for smoother scrolling
 
-        autoScrollRunnable = new Runnable() {
+        autScrollCountDownTimer = new CountDownTimer(totalScrollTime, scrollPeriod) {
+            public void onTick(long millisUntilFinished) {
+                if(pauseAutoScroll == false){
+                    // the reason we have this boolean pauseAutoscroll is so that
+                    // we can use a button to change its value and pause the scrolling
+                    recyclerView.scrollBy(0,heightToScroll);
+                }
+            }
+            public void onFinish() {
+                //you can add code for restarting timer here
+            }
+        } ;
+
+
+        recyclerView.post(new Runnable() {
             @Override
             public void run() {
 
                 recyclerView.scrollToPosition(NO_OF_ITEMS/2);
-                new CountDownTimer(totalScrollTime, scrollPeriod) {
-                    public void onTick(long millisUntilFinished) {
-                        if(pauseAutoScroll == false){
-                            // the reason we have this boolean pauseAutoscroll is so that
-                            // we can use a button to change its value and pause the scrolling
-                            recyclerView.scrollBy(0,heightToScroll);
-                        }
-                    }
-                    public void onFinish() {
-                        //you can add code for restarting timer here
-                    }
-                }.start();
+                autScrollCountDownTimer.start();
             }
 
-        } ;
-
-        recyclerView.post(autoScrollRunnable);
+        });
     }
 }

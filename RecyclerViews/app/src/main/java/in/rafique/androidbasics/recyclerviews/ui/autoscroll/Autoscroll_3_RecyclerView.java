@@ -41,7 +41,7 @@ public class Autoscroll_3_RecyclerView extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        rvAdapter_autoscroll.stopScrolling(recyclerView);
+        rvAdapter_autoscroll.stopScrolling();
     }
 
     @Override
