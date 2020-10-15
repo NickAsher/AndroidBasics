@@ -53,8 +53,6 @@ public class RVAdapter_MultiView extends RecyclerView.Adapter<RecyclerView.ViewH
                 View v3 = LayoutInflater.from(context).inflate(R.layout.singlerow_normal, parent, false) ;
                 return new RVHolder_1(v3) ;
         }
-
-
     }
 
     @Override
