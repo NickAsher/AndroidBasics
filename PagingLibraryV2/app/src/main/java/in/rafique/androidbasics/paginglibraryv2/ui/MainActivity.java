@@ -16,6 +16,7 @@ import in.rafique.androidbasics.paginglibraryv2.data.DataRepository;
 import in.rafique.androidbasics.paginglibraryv2.data.models.Object_CryptoCoin;
 import in.rafique.androidbasics.paginglibraryv2.ui.p1_normal.Activity_P1Normal;
 import in.rafique.androidbasics.paginglibraryv2.ui.p2_dbpaged.Activity_DbPaged;
+import in.rafique.androidbasics.paginglibraryv2.ui.p3_network.Activity_NetworkPaged;
 
 public class MainActivity extends AppCompatActivity {
     Context context ;
@@ -56,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openNetworkPagedRecyclerView(View v){
-        startActivity(new Intent(this, Activity_P1Normal.class));
+        startActivity(new Intent(this, Activity_NetworkPaged.class));
 
     }
 }

@@ -55,4 +55,9 @@ public class Object_CryptoCoin {
         this.mSymbol = mSymbol;
     }
 
+    @Override
+    public String toString() {
+        return mId + " - " + mName + " - " + mSymbol ;
+
+    }
 }

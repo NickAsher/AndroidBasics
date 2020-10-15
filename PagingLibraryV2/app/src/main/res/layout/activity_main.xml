@@ -32,4 +32,12 @@
         android:onClick="openDBPagedRecyclerView"
         />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="Show Paged From Network"
+        android:onClick="openNetworkPagedRecyclerView"
+        />
+
 </LinearLayout>
